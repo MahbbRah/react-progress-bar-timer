@@ -76,6 +76,7 @@ export type ProgressTimerProps = {
   barRounded?: boolean;
   /** Whether the timer should be started. (true = start, false = stop, null/undefined = await input). */
   started?: boolean | null;
+  formatWithDays?: boolean | null;
   /** Callback fired when the timer finishes. */
   onFinish?: (label: string) => void;
 };

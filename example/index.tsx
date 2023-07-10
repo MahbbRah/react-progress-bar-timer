@@ -25,7 +25,7 @@ const App = () => {
         <ProgressTimer
           ref={ref}
           started={started}
-          duration={5}
+          duration={7200}
           label="Label"
         />
 
