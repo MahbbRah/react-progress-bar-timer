@@ -1,0 +1,77 @@
+export declare enum Direction {
+    Left = "left",
+    Right = "right"
+}
+export declare enum Variant {
+    Fill = "fill",
+    Empty = "empty"
+}
+export declare type ProgressTimerHandle = {
+    /** starts a stopped timer. */
+    start: () => void;
+    /** stops a running timer. */
+    stop: () => void;
+    /** restarts a running or finished timer. */
+    restart: () => void;
+};
+/**
+ * Determines if the bar fills or empties
+ * as the timer advances.
+ *
+ * @default 'fill'
+ */
+declare type BarVariant = 'empty' | 'fill';
+/**
+ * The direction the bar grows toward.
+ *
+ * @default 'right'
+ */
+declare type BarDirection = 'left' | 'right';
+declare type ProgressTimerClasses = {
+    /** Styles applied to the root element. */
+    root: string;
+    /** Styles applied to the progress bar container. */
+    progressContainer: string;
+    /** Styles applied to the text container. */
+    textContainer: string;
+    /** Styles applied to the progress bar. */
+    progress: string;
+    /** Styles applied to the label. */
+    label: string;
+    /** Styles applied to the time. */
+    time: string;
+    /** Styles applied when the timer has finished (used for alerting). */
+    finished: string;
+};
+export declare type ProgressTimerProps = {
+    /** Direction the bar grows toward. */
+    direction?: BarDirection;
+    /** Determines if the bar fills or empties. */
+    variant?: BarVariant;
+    /** Color of the bar; background is same with lower opacity. */
+    color?: string;
+    /** Color of the label and timer. */
+    fontColor?: string;
+    /** Duration of the timer in seconds. */
+    duration?: number;
+    /** Label that describes the timer. */
+    label?: string;
+    /** Text displayed when timer is inactive (overrides label). */
+    buttonText?: string;
+    /** Styles applied to the component. */
+    classes?: Partial<ProgressTimerClasses>;
+    /** Font size of the label and timer. Progress bar scales with font size. */
+    fontSize?: string | number;
+    /** Whether the timer's duration should be shown when inactive. */
+    showDuration?: boolean;
+    /** Whether the progress bar's root element should be rounded. */
+    rootRounded?: boolean;
+    /** Whether the progress bar should be rounded. */
+    barRounded?: boolean;
+    /** Whether the timer should be started. (true = start, false = stop, null/undefined = await input). */
+    started?: boolean | null;
+    formatWithDays?: boolean | null;
+    /** Callback fired when the timer finishes. */
+    onFinish?: (label: string) => void;
+};
+export {};
